@@ -1,4 +1,5 @@
 (executable
  (public_name ocamlWork)
+ (modules main clogger)
  (name main)
  (libraries ocamlWork lwt.unix str))
