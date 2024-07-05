@@ -14,4 +14,10 @@ let () =
   let formatMessage =
     Printf.sprintf "Result formatted %s %b" amountOfChildren isNumber
   in
-  Clogger.logInfo formatMessage
+  Clogger.logInfo formatMessage;
+
+  Logs.set_reporter (Logs.format_reporter ());
+  Logs.set_level (Some Logs.Info);
+  let sock = Server.create_socket () in
+  let serve = Server.create_server sock in
+  Lwt_main.run @@ serve ()

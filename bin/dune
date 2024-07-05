@@ -1,4 +1,4 @@
 (executable
- (public_name ocamlWork)
- (name main)
- (libraries ocamlWork lwt.unix str))
+ (public_name ocamlWork) 
+ (name main) 
+ (libraries lwt lwt.unix logs logs.lwt str ocamlWork))
